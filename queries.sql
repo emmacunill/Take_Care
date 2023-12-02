@@ -107,6 +107,79 @@ ORDER BY
 	count_messages desc
 LIMIT 3;
 
+-- 6. Time range, morning, afternoon, night count emotion
+
+WITH time_ranges AS (
+    SELECT
+        CASE
+            WHEN TIME_FORMAT(time, '%H:%i') BETWEEN '07:00' AND '14:00' THEN 'morning'
+            WHEN TIME_FORMAT(time, '%H:%i') BETWEEN '14:00' AND '20:00' THEN 'afternoon'
+            WHEN TIME_FORMAT(time, '%H:%i') >= '20:00' OR TIME_FORMAT(time, '%H:%i') < '02:00' THEN 'night'
+        END AS time_range,
+        emotions_names,
+        COUNT(*) AS emotion_count,
+        ROW_NUMBER() OVER (PARTITION BY
+                            CASE
+                                WHEN TIME_FORMAT(time, '%H:%i') BETWEEN '07:00' AND '14:00' THEN 'morning'
+                                WHEN TIME_FORMAT(time, '%H:%i') BETWEEN '14:00' AND '20:00' THEN 'afternoon'
+                                WHEN TIME_FORMAT(time, '%H:%i') >= '20:00' OR TIME_FORMAT(time, '%H:%i') < '02:00' THEN 'night'
+                            END
+                          ORDER BY COUNT(*) DESC) AS emotion_rank
+    FROM
+        emsemotions
+    GROUP BY
+        time_range, emotions_names
+)
+SELECT
+    time_range,
+    emotions_names
+FROM
+    time_ranges
+WHERE
+    emotion_rank = 4
+ORDER BY
+    time_range DESC
+LIMIT 3;
+
+-- 7. For every year the percentage of emotion montly
+
+SELECT
+    EXTRACT(YEAR FROM month) AS year,
+    max_emotion,
+    ROUND(COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY EXTRACT(YEAR FROM month)) * 100,2) AS percentage_occurrence
+FROM
+    monthlyemotions
+GROUP BY
+    year, max_emotion
+ORDER BY
+    year, max_emotion;
+    
+-- 8. For every year the count of each daily emotion
+
+SELECT
+    EXTRACT(YEAR FROM date) AS year,
+    max_emotion,
+    COUNT(*) AS emotion_count
+FROM
+    daylyemotions
+GROUP BY
+    year, max_emotion
+ORDER BY
+    year asc,emotion_count desc;
+    
+-- 9. How many messages have the word ironhack?
+
+SELECT COUNT(*) AS ironhack_count
+FROM emsemotions
+WHERE message LIKE '%ironhack%';
+
+
+
+
+
+
+
+
 
 
 
