@@ -90,7 +90,7 @@ ORDER BY
         WHEN day_of_week = 'Sunday' THEN 7
     END;
 
--- 5. Time range, morning, afternoon, night avg messages
+-- 5. Time range, morning, afternoon, night count messages
 
 SELECT
     CASE
@@ -173,15 +173,16 @@ SELECT COUNT(*) AS ironhack_count
 FROM emsemotions
 WHERE message LIKE '%ironhack%';
 
+SELECT COUNT(*) AS amiguita_count
+FROM emsemotions
+WHERE message LIKE '%amiguita%';
 
+SELECT COUNT(*) AS amiga_count
+FROM emsemotions
+WHERE message LIKE '%amiga%';
 
-
-
-
-
-
-
-
-
+SELECT COUNT(*) AS amiga_count
+FROM emsemotions
+WHERE message LIKE '%perra%';
 
 
