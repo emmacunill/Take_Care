@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import random
 
+text_df = pd.read_csv('../data/transformed_df/cleaned_texts.csv')  
+songs_df = pd.read_csv('../data/transformed_df/songs.csv')
+
 
 st.set_page_config(
     page_title="Emotion Recommendations",
@@ -35,9 +38,16 @@ st.markdown(
             font-weight: 500;
         }
         .stMarkdown p {
-            color: #D6D278;
+            color: #FFFFFF;
             text-align: center;
             font-family: 'TT Commons Pro', sans-serif;
+        }
+        .stMarkdown h2 {
+            color: #FFB547;
+            text-align: center;
+            font-family: 'TT Commons Pro', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
         }
     </style>
     """,
@@ -60,23 +70,22 @@ color:white;
 display: none
 }
 
-          
 
 [data-baseweb="input"]{
             width: 300px;
     margin:auto;
 }            
 
-.st-co {
+.st-ct {
     border-bottom-color: #5DE1FE;
 }       
-.st-cn {
+.st-cr {
     border-top-color: #5DE1FE;
 }
-.st-cm {
+.st-cr {
     border-right-color: #5DE1FE;
 }
-.st-cl {
+.st-cq {
     border-left-color: #5DE1FE;
 }            
             
@@ -99,17 +108,62 @@ input[class]::placeholder {
     font-size: 14px;
     font-family: 'TT Commons Pro', sans-serif;
     
-  opacity: 1; /* Firefox */
+  opacity: 1; /* Firefox */}
+            
+[data-testid="stDataFrame"]{
+    width: 400px;
 }
+
+[data-testid="stStyledFullScreenFrame"]{
+    background-color: #252525;
+    border: white;
+    padding: 5px;
+    margin:auto;
+    display: felx;
+    align-content:center;
+            
+}
+
 </style>
 """, unsafe_allow_html=True)
 
+
 emotion=st.text_input("Emotion", placeholder="Input your emotion here")
 
-texts = pd.read_csv("../data/transformed_df/texts_emotions_final.csv")
 
-''' Function to if emotion random text of that emotion,
-if emotion list songs emotion'''
+def get_songs_for_emotion(emotion):
+    filtered_songs = songs_df[songs_df['Emotion'] == emotion]
+    return filtered_songs[['Songs', 'Musical']]
+
+
+def get_random_text_with_title(emotion):
+    filtered_texts = text_df[text_df['emotions_names'] == emotion]
+    print(filtered_texts)
+    if not filtered_texts.empty:
+        random_row = random.choice(filtered_texts.index)
+        random_text = filtered_texts.loc[random_row, 'text']
+        random_title = filtered_texts.loc[random_row, 'title']
+        return random_title, random_text
+    else: 
+        st.warning(f"No text found for {emotion}")
+
+st.header(f"Songs for {emotion}")
+songs_table = get_songs_for_emotion(emotion)
+if not songs_table.empty:
+    st.dataframe(songs_table)
+else:
+    st.warning(f"No songs found for {emotion}")
+
+random_title, random_text = get_random_text_with_title(emotion)
+if random_title and random_text:
+    st.header(f"Random Text for {emotion}")
+    st.subheader(f"{random_title}")
+    st.write(f"{random_text}")
+else:
+    st.warning(f"No text found for {emotion}")
+
+# Display songs associated with the selected emotion
+
 
 
 
