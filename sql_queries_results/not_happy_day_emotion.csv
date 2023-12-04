@@ -1,0 +1,8 @@
+day_of_week,end_day,max_emotion,emotion_count
+Monday,WeekDAY,stressed,124
+Tuesday,WeekDAY,stressed,126
+Wednesday,WeekDAY,stressed,130
+Thursday,WeekDAY,stressed,106
+Friday,WeekDAY,stressed,114
+Saturday,WeekEND,love,98
+Sunday,WeekEND,doubtful,102
