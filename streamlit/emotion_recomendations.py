@@ -88,6 +88,10 @@ display: none
 .st-cq {
     border-left-color: #5DE1FE;
 }            
+.st-cs {
+    border-left-color: #5DE1FE;
+} 
+                    
             
 [data-baseweb="base-input"]{
 background:#000000;
@@ -111,16 +115,15 @@ input[class]::placeholder {
   opacity: 1; /* Firefox */}
             
 [data-testid="stDataFrame"]{
-    width: 400px;
+    width: 400px;  
+    display: flex;
+    align-content:center;
+            margin:auto;
 }
 
-[data-testid="stStyledFullScreenFrame"]{
+[class="glideDataEditor wzg2m5k"]{
     background-color: #252525;
-    border: white;
-    padding: 5px;
-    margin:auto;
-    display: felx;
-    align-content:center;
+    border-color: white;
             
 }
 
@@ -156,7 +159,7 @@ else:
 
 random_title, random_text = get_random_text_with_title(emotion)
 if random_title and random_text:
-    st.header(f"Random Text for {emotion}")
+    st.header(f"Text for {emotion}")
     st.subheader(f"{random_title}")
     st.write(f"{random_text}")
 else:
