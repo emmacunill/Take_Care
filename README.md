@@ -102,7 +102,7 @@ Integrate the self-care time recommender and most frequent words used into a Str
 
 ## Next Steps
 
-- **Implement Neural Networks:** Unsupervised methodology using Neural Networks to improve accuracy.
+- **Implement Neural Networks:** Unsupervised Learning methodology using Neural Networks to improve accuracy.
 - **Recommender:** Professionality & Standarize.
 - **Analysis:** Deeper understanding of own patterns.
 - **Generator:** Generate songs insted of listing.
