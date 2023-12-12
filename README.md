@@ -27,7 +27,7 @@ This project revolves around the use of artificial intelligence to address menta
 - **Matplotlib:** A comprehensive library for creating static, animated, and interactive visualizations.
 - **Streamlit:** Rapid App Prototyping for Data Science
 
-- **Other:** Seaborn / re / os / emoji / langid / Translator / random / numpy / sklearn.metrics / pyplot / pymysql / sys / math / Counter / openai / time / concurrent.futures / GoogleTranslator / WordCloud / stopwords / word_tokenize. Amongst others. 
+- **Other:** Seaborn / re / os / emoji / langid / Translator / random / numpy / sklearn.metrics / pyplot / pymysql / sys / math / Counter / openai / time / concurrent.futures / GoogleTranslator / WordCloud / stopwords / word_tokenize. Different API's Amongst others. 
 
 **Data Visualization and Presentation:**
 - **Figma** 
