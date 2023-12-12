@@ -1,5 +1,7 @@
 # Take Care : Project Documentation
 
+![Portada del Proyecto](https://github.com/emmacunill/final_project/blob/main/presentation/Slide%2016_9%20-%2016.png?raw=true)
+
 ## Overview
 
 In a world where trends evolve rapidly, technologies advance continuously, and self-reflection becomes essential, "Take Care" offers a viable solution for young adults and teens. 
@@ -25,7 +27,7 @@ This project revolves around the use of artificial intelligence to address menta
 - **Matplotlib:** A comprehensive library for creating static, animated, and interactive visualizations.
 - **Streamlit:** Rapid App Prototyping for Data Science
 
-- **Other:** Seaborn / re / os / emoji / langid / Translator / random / numpy / sklearn.metrics / pyplot / pymysql / sys / math / Counter / openai / time / concurrent.futures / GoogleTranslator. Amongst others. 
+- **Other:** Seaborn / re / os / emoji / langid / Translator / random / numpy / sklearn.metrics / pyplot / pymysql / sys / math / Counter / openai / time / concurrent.futures / GoogleTranslator / WordCloud / stopwords / word_tokenize. Amongst others. 
 
 **Data Visualization and Presentation:**
 - **Figma** 
@@ -93,12 +95,21 @@ Users benefit from the autoregularization feature, receiving personalized self-c
 An autoregularization feature recommends personalized self-care time for users based on emotional states.
 
 - **Most frequent words used:** 
-It provides useful information for Mental health professionals to pinpoint the origin of possible patterns.
+It provides via Wordcloud useful information for Mental health professionals to pinpoint the origin of possible patterns.
 
 **Streamlit Implementation:**
 Integrate the self-care time recommender and most frequent words used into a Streamlit app for a user-friendly interface and real-time information. 
 
 ## Next Steps
 
+- **Implement Neural Networks:** Unsupervised methodology using Neural Networks to improve accuracy.
+- **Recommender:** Professionality & Standarize.
+- **Analysis:** Deeper understanding of own patterns.
+- **Generator:** Generate songs insted of listing.
+- **Emotions:** Understanding of more complex combinations as emotions rarely go one by one.
+
 ## LINKS
+
+[Canva presentation](https://www.canva.com/design/DAF2HyPDCoE/LOeff3M0OJKUF4Fj6V3_bQ/edit?utm_content=DAF2HyPDCoE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton "Canva Presentation Link")
+
 
