@@ -57,7 +57,7 @@ Users benefit from the autoregularization feature, receiving personalized self-c
 
 ## Step by Step Process
 
-1. Detecting and Tracking Emotions through AI from WhatsApp Conversations
+**1. Detecting and Tracking Emotions through AI from WhatsApp Conversations**
 
 - **Exporting Conversations:** Conversations from WhatsApp are exported and transformed into CSV format.
 
@@ -75,8 +75,19 @@ Users benefit from the autoregularization feature, receiving personalized self-c
 
 - **Results Exploration:** Figma schemas provide visual representations of emotional patterns. SQL queries and views are used for accessing updated data. Tableau visualizations offer insights into patterns and emotional stories for mental health professionals.
 
+![Tableau](https://github.com/emmacunill/final_project/blob/main/videos/Tableau_example.png?raw=true)
 
-5. Autoregularization
+**2. Predicting Future Emotional States**
+
+- **Obtaining New Dataset:** The initial dataset is merged with incorporating daily, weekly, and next month monthly max emotions datasets. 
+
+- **Model Training:** A new model is trained to predict future emotional states by finding new patterns.
+
+- **Model Application:** The trained model is applied to the dataset to predict emotional states for the upcoming month (e.g., The maximum emotion for December will be: Happiness.)
+
+
+
+**3. Autoregularization**
 
 - **Self-Care Time Recommender:** 
 An autoregularization feature recommends personalized self-care time for users based on emotional states.
@@ -89,5 +100,5 @@ Integrate the self-care time recommender and most frequent words used into a Str
 
 ## Next Steps
 
-
+## LINKS
 
