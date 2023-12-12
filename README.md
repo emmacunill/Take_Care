@@ -92,7 +92,7 @@ Users benefit from the autoregularization feature, receiving personalized self-c
 **3. Autoregularization**
 
 - **Self-Care Time Recommender:** 
-An autoregularization feature recommends personalized self-care time for users based on emotional states by ahving 2 new datasets, one for songs and the other for texts on which the modell of detecting emotions was passed.
+An autoregularization feature recommends personalized self-care time for users based on emotional states by having 2 new datasets, one for songs and the other for texts on which the modell of detecting emotions was passed.
 
 - **Most frequent words used:** 
 It provides via Wordcloud useful information for Mental health professionals to pinpoint the origin of possible patterns.
